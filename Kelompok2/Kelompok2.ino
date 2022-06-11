@@ -8,8 +8,8 @@ int pinTrigger = 12;               // Pin Trigger Sensor Jarak Ultrasonic
 int pinEcho = 11;                  // Pin Echo Sensor Jarak Ultrasonic
 long jarak, cm;                    // Jarak Ketinggian Batas Atas dan Batas Bawah Tempat Pengisian Air
 int pinMotor = 13;                 // Digital Pin Arduino yang dihubungkan ke Motor DC
-int pinTombolMotor = 5;            // Push Button untuk kendali manual pada Pompa Air
-bool statusMotor = false;          // Jika false maka Pompa Air Off, tapi jika true maka Pompa Air On
+int pinTombolMotor = 5;            // Push Button untuk kendali manual pada Pengisian Air
+bool statusMotor = false;          // Jika false maka Pengisian Air Off, tapi jika true maka Pengisian Air On
 bool statusTombolMotor = false;    // Jika ditekan maka Motor On (true), tapi jika ditekan lagi maka Motor Off (false)
 int pinPemanas = 10;               // Jika LED Red On maka Pemanas Air sedang On, jika LED Red Off maka Pemanas Air sedang Off
 int pinTombolPemanas = 9;          // Push Button untuk kendali manual pada Pemanas Air
@@ -42,7 +42,7 @@ void loop() {
   int sisa;  // Persentase Sisa Air
 
   //* Start of Water Filling (Manual)
-  // Membaca value dari Push Button Pompa Air
+  // Membaca value dari Push Button Pengisian Air
   if (digitalRead(pinTombolMotor) == LOW) {
     statusMotor = !statusMotor;              // Mengubah value bool statusMotor
     statusTombolMotor = !statusTombolMotor;  // Mengubah value bool statusTombolMotor
@@ -77,23 +77,23 @@ void loop() {
 
   //* Start of Water Filling (Automation)
   if (sisa <= 10) {
-    statusMotor = true;  // Jika sisa air <= 10% (hampir habis), maka Pompa Air On
+    statusMotor = true;  // Jika sisa air <= 10% (hampir habis), maka Pengisian Air On
     delay(250);
   } else if (sisa >= 90) {
-    statusMotor = false;        // Jika sisa air >= 90% (hampir penuh), maka Pompa Air Off
-    statusTombolMotor = false;  // Menjaga agar Pompa Air tetap Off meskipun Push Button ditekan jika sisa air >= 90% (hampir penuh)
+    statusMotor = false;        // Jika sisa air >= 90% (hampir penuh), maka Pengisian Air Off
+    statusTombolMotor = false;  // Menjaga agar Pengisian Air tetap Off meskipun Push Button ditekan jika sisa air >= 90% (hampir penuh)
     delay(250);
   }
 
   // Statement On / Off
   if (statusMotor) {
-    Serial.println("Pompa Air On");
+    Serial.println("Pengisian Air On");
     lcd.setCursor(0, 1);
-    lcd.print("Pompa Air On ");
+    lcd.print("Pengisian Air On ");
   } else {
-    Serial.println("Pompa Air Off");
+    Serial.println("Pengisian Air Off");
     lcd.setCursor(0, 1);
-    lcd.print("Pompa Air Off");
+    lcd.print("Pengisian Air Off");
   }
   //* End of Water Filling (Automation)
 
