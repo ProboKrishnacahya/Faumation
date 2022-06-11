@@ -1,0 +1,1 @@
+Berikut kami sertakan library LiquidCrystal untuk LCD pada coding di Arduino IDE nya Pak, karena jika menggunakan Library dari yang dibagikan di E-Learn IoT tidak bisa kami gunakan (terkena error ketika "Verify" coding programnya). Terima kasih Pak.
