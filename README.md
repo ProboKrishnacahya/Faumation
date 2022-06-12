@@ -13,7 +13,7 @@ Kelompok 2:
 
 ### 📱 Tentang Proyek
 
-Faumation adalah proyek yang dibuat menggunakan teknologi Internet of Things dengan topik "Sistem Pemantauan Ketinggian Air dan Pemanas Temperatur Air dengan Otomasi Keran Berbasis Internet of Things Melalui Web Menggunakan Modul Arduino Uno R3 V2.0 Pada Penampungan Air Warga". Faumation tersedia dalam bentuk simulasi [Proteus](https://www.labcenter.com/) maupun simulasi dalam bentuk Website Faumation yang dapat diakses melalui Web Browser.
+Faumation adalah proyek yang dibuat menggunakan teknologi Internet of Things dengan topik "Sistem Pemantauan Ketinggian Air dan Pemanas Temperatur Air dengan Otomasi Keran Berbasis Internet of Things Melalui Web Menggunakan Modul Arduino Uno R3 V2.0 Pada Penampungan Air Warga". Faumation tersedia dalam bentuk simulasi [Proteus](https://www.labcenter.com/) maupun simulasi dalam bentuk [Aplikasi Web](https://archotech.xyz/) yang dapat diakses melalui Web Browser.
 
 Manfaat penggunaan Faumation:
 
